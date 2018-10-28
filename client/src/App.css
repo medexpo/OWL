@@ -60,3 +60,7 @@ svg {
   margin-top: 10%;
   height: auto;
 }
+
+.hideOverflow {
+  overflow: hidden;
+}

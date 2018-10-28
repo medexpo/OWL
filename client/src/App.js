@@ -19,7 +19,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="hideOverflow">
         <Aside />
         <div className="owl">
           <h1> O.W.L. </h1>
