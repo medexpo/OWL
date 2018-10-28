@@ -11,16 +11,15 @@ svg {
   margin: auto;
 }
 
-.beat-loader{
-  stroke: #E76E66;
+.beat-loader {
+  stroke: #e76e66;
   stroke-dasharray: 175;
   stroke-dashoffset: 350;
-  animation: draw 1.4s linear infinite;
+  animation: draw 1.4s ease-in-out infinite;
 }
 
-
 @keyframes draw {
-  to{
+  to {
     stroke-dashoffset: 0;
   }
 }
