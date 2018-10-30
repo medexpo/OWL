@@ -1,7 +1,7 @@
 .owl {
   position: relative;
   margin-top: 12%;
-  left: 17%;
+  left: 16.5%;
   text-align: center;
   color: white;
 }
@@ -35,10 +35,7 @@ svg {
 .sticky-sidebar {
   position: fixed;
   background: #e7eef1;
-  padding: 40px 40px 60px;
   box-sizing: border-box;
-  border-radius: 2px;
-  box-shadow: 0 12px 0 -6px #fa90a3;
   left: 0;
   top: 0;
   width: 33%;
@@ -49,16 +46,19 @@ svg {
 
 .excel {
   position: relative;
-  top: 0;
+  top: 1%;
   left: 0;
-  display: block;
   max-width: 100%;
+  max-height: 100%;
 }
 
 .pulse {
+  position: absolute;
   max-width: 100%;
-  margin-top: 10%;
-  height: auto;
+  max-height: 100%;
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%, -50%);
 }
 
 .hideOverflow {
