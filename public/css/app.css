@@ -1,7 +1,11 @@
+#root {
+  overflow: hidden;
+}
+
 .owl {
   position: relative;
   margin-top: 12%;
-  left: 17%;
+  left: 16.5%;
   text-align: center;
   color: white;
 }
@@ -35,10 +39,7 @@ svg {
 .sticky-sidebar {
   position: fixed;
   background: #e7eef1;
-  padding: 40px 40px 60px;
   box-sizing: border-box;
-  border-radius: 2px;
-  box-shadow: 0 12px 0 -6px #fa90a3;
   left: 0;
   top: 0;
   width: 33%;
@@ -47,20 +48,54 @@ svg {
   text-align: center;
 }
 
-.excel {
+.excel-logo {
   position: relative;
-  top: 0;
+  top: 1%;
   left: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.pulse-logo {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn {
+  position: absolute;
+  top: 45%;
+  bottom: 0;
+  left: 33%;
+  right: 0;
+  margin: auto;
   display: block;
-  max-width: 100%;
+  background: black !important;
+  width: 150px !important;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
 }
 
-.pulse {
-  max-width: 100%;
-  margin-top: 10%;
-  height: auto;
+.left {
+  padding: 5px 5px 5px 0px !important;
 }
 
-.hideOverflow {
-  overflow: hidden;
+@media screen and (max-width: 265px) {
+  .btn {
+    width: 50% !important;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .pulse-logo {
+    top: 35%;
+    left: -35%;
+    max-width: 175% !important;
+    transform: rotate(270deg) !important;
+  }
 }
