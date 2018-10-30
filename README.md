@@ -6,3 +6,12 @@ Come over to explore the engineering of life.
 
 An opportunity like no other for budding engineers to gain practical knowledge through numerous project exhibits, and biomedical equipments. Active on the 2nd and 3rd of November, winning the Online Quiz O.W.L, gets you a direct entry to the highlight of the event, the Obscura Maze.
 The Biomedical Exhibition, Pulse'18 is up and runnit this Nov 2 and 3.
+
+#### Testing
+
+```sh
+$ export CLIENTID="<clientid obtained from google>"
+$ export SECRET="<client secret obtained from google>"
+$ export DBURI="<connection url for mongodb instance>"
+$ yarn start
+```
