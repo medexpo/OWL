@@ -12,6 +12,5 @@ The Biomedical Exhibition, Pulse'18 is up and runnit this Nov 2 and 3.
 ```sh
 $ export CLIENTID="<clientid obtained from google>"
 $ export SECRET="<client secret obtained from google>"
-$ export DBURI="<connection url for mongodb instance>"
 $ yarn start
 ```
