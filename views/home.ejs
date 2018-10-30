@@ -6,35 +6,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>O.W.L | Pulse 18 | Excel 2018</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/public/css/app.css" />
   <link rel="stylesheet" type="text/css" href="/public/css/index.css" />
   <link rel="shortcut icon" href="/public/assets/favicon.ico" />
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
 </head>
 
 <body>
   <div id=root>
-    <div class="hideOverflow">
-      <div class="sticky-sidebar">
-        <img src="/public/assets/excel_logo.png" alt="Excel Logo" class="excel" />
-        <img src="/public/assets/pulse_burned.png" alt="Pulse18 Logo" class="pulse" />
-      </div>
-      <div class="owl">
-        <h1>O.W.L.</h1>
-      </div>
-      <div class="Pulse">
-        <svg width="108px" height="128px" viewBox="0 0 54 64" version="1.1" xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-          <defs></defs>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-            <path class="beat-loader" d="M0.5,38.5 L16,38.5 L19,25.5 L24.5,57.5 L31.5,7.5 L37.5,46.5 L43,38.5 L53.5,38.5"
-              id="Path-2" stroke-width="2" sketch:type="MSShapeGroup"></path>
-          </g>
-        </svg>
-      </div>
-      <a href="/auth/login" class="btn-google">
-        <i class="fa fa-google" aria-hidden="true"></i>
-        <span class="btn-text">Login with Google</span>
+    <div class="sticky-sidebar">
+      <img src="/public/assets/excel_logo.png" alt="Excel Logo" class="excel-logo" />
+      <img src="/public/assets/pulse_burned.png" alt="Pulse18 Logo" class="pulse-logo" />
+    </div>
+    <div class="owl">
+      <h1>O.W.L</h1>
+    </div>
+    <div class="Pulse">
+      <svg width="108px" height="128px" viewBox="0 0 54 64" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+        <defs></defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+          <path class="beat-loader" d="M0.5,38.5 L16,38.5 L19,25.5 L24.5,57.5 L31.5,7.5 L37.5,46.5 L43,38.5 L53.5,38.5"
+            id="Path-2" stroke-width="2" sketch:type="MSShapeGroup"></path>
+        </g>
+      </svg>
+      <a href="/auth/login/" class="btn">
+        <div class="left">
+          <img width="20px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+        </div>
+        Login
       </a>
     </div>
   </div>

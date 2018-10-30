@@ -1,3 +1,7 @@
+#root {
+  overflow: hidden;
+}
+
 .owl {
   position: relative;
   margin-top: 12%;
@@ -44,7 +48,7 @@ svg {
   text-align: center;
 }
 
-.excel {
+.excel-logo {
   position: relative;
   top: 1%;
   left: 0;
@@ -52,7 +56,7 @@ svg {
   max-height: 100%;
 }
 
-.pulse {
+.pulse-logo {
   position: absolute;
   max-width: 100%;
   max-height: 100%;
@@ -61,43 +65,37 @@ svg {
   transform: translate(-50%, -50%);
 }
 
-.hideOverflow {
-  overflow: hidden;
-}
-
-.btn-google {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  height: 40px;
-  border-width: 0;
-  background: white;
-  color: #737373;
+.btn {
+  position: absolute;
+  top: 45%;
+  bottom: 0;
+  left: 33%;
+  right: 0;
+  margin: auto;
+  display: block;
+  background: black !important;
+  width: 150px !important;
+  text-align: center;
   border-radius: 5px;
-  white-space: nowrap;
-  box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05);
-  transition-property: background-color, box-shadow;
-  transition-duration: 150ms;
-  transition-timing-function: ease-in-out;
-  padding: 0;
+  color: white;
+  font-weight: bold;
 }
 
-  .btn-google:hover,
-  .btn-google:focus {
-    box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
-  }
+.left {
+  padding: 5px 5px 5px 0px !important;
+}
 
-  .btn-google:active {
-    background-color: #e5e5e5;
-    box-shadow: none;
-    transition-duration: 10ms;
+@media screen and (max-width: 265px) {
+  .btn {
+    width: 50% !important;
   }
+}
 
-.btn-text {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 0 24px;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: 'Roboto',arial,sans-serif
+@media screen and (orientation: portrait) {
+  .pulse-logo {
+    top: 35%;
+    left: -35%;
+    max-width: 175% !important;
+    transform: rotate(270deg) !important;
+  }
 }
