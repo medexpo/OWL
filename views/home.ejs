@@ -1,47 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>O.W.L | Pulse 18 | Excel 2018</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="/public/css/app.css" />
-  <link rel="stylesheet" type="text/css" href="/public/css/index.css" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/public/assets/favicon.ico" />
 
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/public/css/app.css" />
+  <link rel="stylesheet" type="text/css" href="/public/css/index.css" />
 
+  <title>O.W.L | Pulse | Excel 2018</title>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div id=root>
-    <div class="sticky-sidebar">
-      <img src="/public/assets/excel_logo.png" alt="Excel Logo" class="excel-logo" />
-      <img src="/public/assets/pulse_burned.png" alt="Pulse18 Logo" class="pulse-logo" />
-    </div>
-    <div class="owl">
-      <h1>O.W.L</h1>
-    </div>
-    <div class="Pulse">
-      <svg width="108px" height="128px" viewBox="0 0 54 64" version="1.1" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-        <defs></defs>
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-          <path class="beat-loader" d="M0.5,38.5 L16,38.5 L19,25.5 L24.5,57.5 L31.5,7.5 L37.5,46.5 L43,38.5 L53.5,38.5"
-            id="Path-2" stroke-width="2" sketch:type="MSShapeGroup"></path>
-        </g>
-      </svg>
-      <a href="/auth/google" class="btn">
-        <div class="left">
-          <img width="20px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 px-1 bg-dark position-fixed sticky-sidebar">
+      </div>
+      <div class="col offset-3">
+        <div class="main d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
+          <div class="p-2">
+            <h1 class="shadow-typo">O.W.L</h1>
+          </div>
+          <div class="p-2">
+            <a href="/views/rules.ejs">
+              <button type="button" class="btn btn-outline-secondary" style="margin: 10px 10px 10px 10px;">Rules</button>
+            </a>
+            <a href="http://excelmec.org/#/events/pulse18">
+              <button type="button" class="btn btn-outline-secondary" style="margin: 10px 10px 10px 10px;">About</button>
+            </a>
+          </div>
+          <div class="p-2">
+            <img src="" alt="Pulse 18" />
+          </div>
+          <div class="p-2">
+            <svg width="108px" height="128px" viewBox="0 0 54 64" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                <path class="beat-loader" d="M0.5,38.5 L16,38.5 L19,25.5 L24.5,57.5 L31.5,7.5 L37.5,46.5 L43,38.5 L53.5,38.5"
+                  id="Path-2" stroke-width="2" sketch:type="MSShapeGroup"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="p-2">
+            <a href="/auth/google">
+              <button type="button" class="btn btn-outline-dark" style="color: white;">
+                <img style="padding-right: 10px;" width="40px" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                Login
+              </button>
+            </a>
+          </div>
         </div>
-        Login
-      </a>
+      </div>
     </div>
   </div>
 </body>
