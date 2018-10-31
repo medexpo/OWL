@@ -65,7 +65,7 @@ app.get("/", userCheck, (req, res) => {
 
 app.get("/participate", participationCheck, (req, res) => {
   var option = req.param("options");
-  if (req.user.level == 20) {
+  if (req.user.level === 20) {
     res.redirect("/profile");
   } else {
     console.log(
@@ -79,7 +79,7 @@ app.get("/participate", participationCheck, (req, res) => {
         console.log(err);
       }
       if (option) {
-        if (option == doc.assignedQSet[req.user.level].correctIndex) {
+        if (option === doc.assignedQSet[req.user.level].correctIndex) {
           doc.score = doc.score + doc.assignedQSet[req.user.level].score;
         }
         doc.level = doc.level + 1;
