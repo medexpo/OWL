@@ -20,7 +20,7 @@ passport.use(
       clientSecret: process.env.SECRET
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log(profile.emails[0].value);
+      console.log(profile);
 
       User.findOne({ googleId: profile.id }).then(currentUser => {
         if (currentUser) {
@@ -33,6 +33,7 @@ passport.use(
           new User({
             name: profile.displayName,
             email: profile.emails[0].value,
+            dpurl: profile.photos[0].value,
             googleId: profile.id,
             score: 0,
             level: 0
