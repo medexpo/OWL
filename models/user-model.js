@@ -7,7 +7,8 @@ const userSchema = new Schema({
   dpurl: String,
   googleId: String,
   score: Number,
-  level: Number
+  level: Number,
+  assignedQSet: JSON
 });
 
 const User = mongoose.model("user", userSchema);
