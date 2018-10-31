@@ -6,9 +6,10 @@
     "start": "node_modules/.bin/nodemon server.js"
   },
   "dependencies": {
-    "@google-cloud/datastore": "^2.0.0",
+    "cookie-session": "^2.0.0-beta.3",
     "ejs": "^2.6.1",
     "express": "^4.16.2",
+    "mongoose": "^5.3.8",
     "nodemon": "^1.18.5",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
