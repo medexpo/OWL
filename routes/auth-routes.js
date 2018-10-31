@@ -3,10 +3,11 @@ const passport = require("passport");
 
 // Auth Login with Google
 router.get("/login", (req, res) => {
-  res.send("Logging in!");
+  res.redirect("/auth/google");
 });
 router.get("/logout", (req, res) => {
-  res.send("Logging out!");
+  req.logout();
+  res.redirect("/");
 });
 
 router.get("/google", passport.authenticate("google", { scope: ["email"] }));

@@ -36,10 +36,18 @@ app.use("/auth", authRoutes);
 
 // Profile routes
 app.use("/profile", profileRoutes);
-  
+
 // Home route
-app.get("/", (req, res) => {
-  res.render("home.ejs");
+const userCheck = (req, res, next) => {
+  if (req.user) {
+    res.redirect("/profile");
+  } else {
+    next();
+  }
+};
+
+app.get("/", userCheck, (req, res) => {
+  res.render("home.ejs", { user: req.user });
 });
 
 const server = app.listen(8080, () => {
