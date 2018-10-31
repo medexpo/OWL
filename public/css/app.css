@@ -1,26 +1,27 @@
-#root {
-  overflow: hidden;
+.sticky-sidebar {
+  height: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background-image: url("/public/assets/excel_logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.owl {
-  position: relative;
-  margin-top: 12%;
-  left: 16.5%;
-  text-align: center;
+.main {
+  align-items: center;
+  justify-content: center;
   color: white;
 }
 
-.Pulse {
-  text-align: center;
-}
-
-svg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 33%;
-  right: 0;
-  margin: auto;
+.shadow-typo {
+  position: relative;
+  display: inline-block;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #00b3b4;
+  text-shadow: 3px 3px 0 #235323, 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .beat-loader {
@@ -36,66 +37,24 @@ svg {
   }
 }
 
-.sticky-sidebar {
-  position: fixed;
-  background: #e7eef1;
-  box-sizing: border-box;
-  left: 0;
-  top: 0;
-  width: 33%;
-  height: 100%;
-  float: left;
-  text-align: center;
-}
-
-.excel-logo {
-  position: relative;
-  top: 1%;
-  left: 0;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.pulse-logo {
-  position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.btn {
-  position: absolute;
-  top: 45%;
-  bottom: 0;
-  left: 33%;
-  right: 0;
-  margin: auto;
+.dp {
   display: block;
-  background: black !important;
-  width: 150px !important;
-  text-align: center;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
 }
 
-.left {
-  padding: 5px 5px 5px 0px !important;
+.p-2 h4 {
+  color: #e76e66;
+  padding-left: 0.6rem;
+  font-size: 2rem;
 }
 
-@media screen and (max-width: 265px) {
-  .btn {
-    width: 50% !important;
-  }
+.p-2 h5 {
+  padding-left: 0.8rem;
+  font-size: 1rem;
 }
 
-@media screen and (orientation: portrait) {
-  .pulse-logo {
-    top: 35%;
-    left: -35%;
-    max-width: 175% !important;
-    transform: rotate(270deg) !important;
-  }
+.pos {
+  margin-top: 15%;
 }
