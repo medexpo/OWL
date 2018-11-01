@@ -24,17 +24,10 @@
   text-shadow: 3px 3px 0 #235323, 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-.beat-loader {
-  stroke: #e76e66;
-  stroke-dasharray: 175;
-  stroke-dashoffset: 350;
-  animation: draw 1.4s ease-in-out infinite;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
+.pulse-ecg {
+  z-index: -999;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .dp {
