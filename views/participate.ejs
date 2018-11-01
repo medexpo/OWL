@@ -59,28 +59,29 @@
             <br />
             <form action="/participate" action="GET">
               <div class="form-check">
-                <input class="form-check-input" type="radio" id="value0" name="options" value="0">
+                <input class="form-check-input" type="radio" id="value0" name="o" value="0" required>
                 <label class="form-check-label" for="value0">
                   <%= user.assignedQSet[user.level].answers[0] %>
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" id="value1" name="options" value="1">
+                <input class="form-check-input" type="radio" id="value1" name="o" value="1" required>
                 <label class="form-check-label" for="value1">
                   <%= user.assignedQSet[user.level].answers[1] %>
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" id="value2" name="options" value="2">
+                <input class="form-check-input" type="radio" id="value2" name="o" value="2" required>
                 <label class="form-check-label" for="value2">
                   <%= user.assignedQSet[user.level].answers[2] %>
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" id="value3" name="options" value="3">
+                <input class="form-check-input" type="radio" id="value3" name="o" value="3" required>
                 <label class="form-check-label" for="value3">
                   <%= user.assignedQSet[user.level].answers[3] %>
                 </label>
+                <input type="hidden" name="l" value="<%= user.level %>" />
               </div>
               <br />
               <button type="submit" class="btn btn-outline-success">Submit</button>
