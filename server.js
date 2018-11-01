@@ -105,6 +105,10 @@ app.get("/participate", participationCheck, (req, res) => {
   }
 });
 
+app.get("/leaderboard", (req, res) => {
+  res.render("leaderboard.ejs", { user: req.user });
+});
+
 const server = app.listen(8080, () => {
   const host = server.address().address;
   const port = server.address().port;
