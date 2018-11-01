@@ -10,7 +10,6 @@ const User = require("./models/user-model");
 const app = express();
 
 // Setup static files and views directory
-// app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 app.use("/public", express.static("public"));
 
@@ -38,10 +37,6 @@ app.use("/auth", authRoutes);
 // Profile routes
 app.use("/profile", profileRoutes);
 
-// parse page request body
-// app.use(bodyParser);
-
-// Home route
 const userCheck = (req, res, next) => {
   if (req.user) {
     res.redirect("/profile");
@@ -51,10 +46,8 @@ const userCheck = (req, res, next) => {
 };
 const participationCheck = (req, res, next) => {
   if (!req.user) {
-    //if no one is loged ins
     res.redirect("/auth/google");
   } else {
-    // if some one is logged in
     next();
   }
 };
@@ -66,38 +59,23 @@ app.get("/", userCheck, (req, res) => {
 app.get("/participate", participationCheck, (req, res) => {
   var option = req.param("o");
   var level = req.param("l");
+  var time = req.param("t");
   if (req.user.level >= 19) {
     res.redirect("/profile");
   } else {
-    // console.log(
-    //   "option in Request: ",
-    //   option,
-    //   "Level in request: ",
-    //   req.user.level,
-    //   "Score in request: ",
-    //   req.user.score,
-    //   "correct index for current question: ",
-    //   req.user.assignedQSet[req.user.level].correctIndex
-    // );
     User.findOne({ email: req.user.email }, function(err, doc) {
       if (err) {
         console.log(err);
       }
-      // console.log(
-      //   "Doc: ",
-      //   doc.level,
-      //   doc.score,
-      //   doc.assignedQSet[doc.level].correctIndex
-      // );
-      // console.log(option == req.user.assignedQSet[req.user.level].correctIndex);
+
       if (level == req.user.level) {
         if (option == req.user.assignedQSet[req.user.level].correctIndex) {
-          // console.log("score updated");
           doc.score =
             req.user.score + req.user.assignedQSet[req.user.level].score;
         }
         if (typeof option !== "undefined") {
           doc.level = doc.level + 1;
+          doc.elapsedTime = doc.elapsedTime + time;
         }
       }
       doc.save();
@@ -115,7 +93,12 @@ app.get("/leaderboard", (req, res) => {
     for (i = 0; i < partdoc.length; i++) {
       partdoc[i].assignedQSet = null;
     }
-    partdoc = partdoc.sort((a, b) => parseInt(b.score) - parseInt(a.score));
+    partdoc = partdoc.sort((a, b) => {
+      var diff = parseInt(b.score) - parseInt(a.score);
+      if (diff === 0) {
+        return parseInt(a.elapsedTime) - parseInt(b.elapsedTime);
+      } else return diff;
+    });
     res.render("leaderboard.ejs", { userlist: partdoc });
   });
 });
