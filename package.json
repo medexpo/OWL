@@ -13,5 +13,9 @@
     "nodemon": "^1.18.5",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
+  },
+  "engines": {
+    "node": "8.x",
+    "yarn": ">=1.10.0 <2.0.0"
   }
 }
