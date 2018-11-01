@@ -35,10 +35,10 @@
           <a href="/profile">
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Profile</button>
           </a>
-          <% if(user.level<=19) { %>
-            <a href="/participate">
-              <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Play</button>
-            </a>
+          <% if(user.level<19) { %>
+          <a href="/participate">
+            <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Play</button>
+          </a>
           <% } %>
           <a href="/leaderboard">
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Leaderboard</button>
@@ -48,10 +48,10 @@
           </a>
         </div>
         <div class="main pos-profile d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
-          <% if(user.level>19) { %>
-            <div class="alert alert-success">
-              <strong>Congratulations!</strong> You have completed O.W.L.
-            </div>
+          <% if(user.level>=19) { %>
+          <div class="alert alert-success">
+            <strong>Congratulations!</strong> You have completed O.W.L.
+          </div>
           <% } %>
           <div class="p-2">
             <img class="dp" src="<%= (user.dpurl) %>">
