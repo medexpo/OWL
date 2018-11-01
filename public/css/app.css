@@ -74,6 +74,11 @@
   border-radius: 50%;
 }
 
+.list-group li {
+  font-size: 1.1rem;
+  margin: 10px 10px 10px 10px;
+}
+
 .p-2 h4 {
   color: #e76e66;
   font-size: 2rem;
@@ -100,4 +105,8 @@
 
 input[type=radio] {
   transform: scale(1.5);
+}
+
+td > p{
+
 }
