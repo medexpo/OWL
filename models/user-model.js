@@ -8,6 +8,7 @@ const userSchema = new Schema({
   googleId: String,
   score: Number,
   level: Number,
+  elapsedTime: Number,
   assignedQSet: JSON
 });
 
