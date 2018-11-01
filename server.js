@@ -65,7 +65,7 @@ app.get("/", userCheck, (req, res) => {
 
 app.get("/participate", participationCheck, (req, res) => {
   var option = req.param("options");
-  if (req.user.level === 19) {
+  if (req.user.level >= 19) {
     res.redirect("/profile");
   } else {
     // console.log(
