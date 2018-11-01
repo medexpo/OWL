@@ -113,11 +113,11 @@ app.get("/timeout", (req, res) => {
     if (err) {
       console.log(err);
     }
-    userdoc.level = 19;
+    userdoc.level = 20;
     userdoc.elapsedTime = parseInt(time);
     userdoc.save();
   });
-  res.redirect("/profile");
+  res.redirect("/profile", { user: req.user });
 });
 
 const server = app.listen(8080, () => {
