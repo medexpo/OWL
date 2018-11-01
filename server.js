@@ -75,7 +75,7 @@ app.get("/participate", participationCheck, (req, res) => {
         }
         if (typeof option !== "undefined") {
           doc.level = doc.level + 1;
-          doc.elapsedTime = parseInt(doc.elapsedTime) + parseInt(time);
+          doc.elapsedTime = parseInt(time);
         }
       }
       doc.save();
@@ -105,6 +105,19 @@ app.get("/leaderboard", (req, res) => {
 
 app.get("/rules", (req, res) => {
   res.render("rules.ejs");
+});
+
+app.get("/timeout", (req, res) => {
+  var time = req.param("t");
+  User.findOne({ email: req.user.email }, function(err, userdoc) {
+    if (err) {
+      console.log(err);
+    }
+    userdoc.level = 19;
+    userdoc.elapsedTime = parseInt(time);
+    userdoc.save();
+  });
+  res.redirect("/profile");
 });
 
 const server = app.listen(8080, () => {
