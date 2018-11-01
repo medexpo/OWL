@@ -10,6 +10,7 @@
 }
 
 .sticky-sidebar {
+  background-color: #33383e !important;
   height: 100%;
   display: flex; 
   align-items: center; 
@@ -88,8 +89,12 @@
   font-size: 1rem;
 }
 
-.pos {
+.pos-profile {
   margin-top: 15%;
+}
+
+.pos {
+  margin-top: 5%;
 }
 
 .info h3 {
@@ -107,6 +112,12 @@ input[type=radio] {
   transform: scale(1.5);
 }
 
-td > p{
+.form-check {
+  margin: 5px 5px 5px 5px;
+}
 
+.container-fluid {
+  position: relative;
+  top: 2%;
+  left: 0;
 }

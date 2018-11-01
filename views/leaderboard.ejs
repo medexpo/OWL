@@ -45,35 +45,38 @@
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Profile</button>
           </a>
         </div>
-        <!-- <div class="main pos d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column"> -->
+        <div class="main d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
           <div class="container-fluid">
-            <div class="row">
+            <div class="row" style="margin-left: -13%;">
               <div class="col-12 text-center">
                 <h1 style="color: #e76e66">Leaderboard</h1>
               </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-left: -13%;">
               <div class="col-12">
-                <table class="table table-dark table-bordered">
+                <table class="table table-borderless table-hover">
                   <thead>
                     <tr>
-                      <th>#</th>
-                      <th>User</th>
-                      <th>Score</th>
+                      <th style="color: #e76e66">#</th>
+                      <th style="color: #e76e66">User</th>
+                      <th style="color: #e76e66">Name</th>
+                      <th style="color: #e76e66">Score</th>
                     </tr>
                   </thead>
                   <tbody>
                     <% for(var i=0; i<userlist.length;i++) { %>
                     <tr>
                       <td>
-                        <p><%= i+1 %></p>
+                        <p style="font-weight: bold; font-size: 1rem;"><%= i+1 %></p>
                       </td>
                       <td>
                         <img class="img-thumbnail rounded-circle" src="<%= userlist[i].dpurl %>" />
-                        <p><%= userlist[i].name %></p>
                       </td>
                       <td>
-                        <p><%= userlist[i].score %></p>
+                        <p style="font-weight: bold; font-size: 1rem;"><%= userlist[i].name %></p>
+                      </td>
+                      <td>
+                        <p style="font-weight: bold; font-size: 1rem;"><%= userlist[i].score %></p>
                       </td>
                     </tr>
                     <% } %>
@@ -82,7 +85,7 @@
               </div>
             </div>
           </div>
-        <!-- </div> -->
+        </div>
       </div>
     </div>
   </div>
