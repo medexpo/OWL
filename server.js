@@ -65,7 +65,7 @@ app.get("/", userCheck, (req, res) => {
 
 app.get("/participate", participationCheck, (req, res) => {
   var option = req.param("options");
-  if (req.user.level === 20) {
+  if (req.user.level === 19) {
     res.redirect("/profile");
   } else {
     // console.log(
@@ -82,14 +82,14 @@ app.get("/participate", participationCheck, (req, res) => {
       if (err) {
         console.log(err);
       }
-      console.log(
-        "Doc: ",
-        doc.level,
-        doc.score,
-        doc.assignedQSet[doc.level].correctIndex
-      );
+      // console.log(
+      //   "Doc: ",
+      //   doc.level,
+      //   doc.score,
+      //   doc.assignedQSet[doc.level].correctIndex
+      // );
       // console.log(option == req.user.assignedQSet[req.user.level].correctIndex);
-      if (option === req.user.assignedQSet[req.user.level].correctIndex) {
+      if (option == req.user.assignedQSet[req.user.level].correctIndex) {
         console.log("score updated");
         doc.score =
           req.user.score + req.user.assignedQSet[req.user.level].score;
@@ -100,20 +100,22 @@ app.get("/participate", participationCheck, (req, res) => {
 
       doc.save();
       console.log("");
+
+      res.render("participate.ejs", { user: doc });
     });
-    res.render("participate.ejs", { user: req.user });
   }
 });
 
 app.get("/leaderboard", (req, res) => {
-  User.find({ score: { $gt: -1 } }, function(err, doc) {
+  User.find({ score: { $gt: -1 } }, function(err, partdoc) {
     if (err) {
       console.log(err);
-    } else {
-      console.log(doc);
     }
-    doc = doc.sort((a, b) => parseInt(b.score) - parseInt(a.score));
-    res.render("leaderboard.ejs", { userlist: doc });
+    for (i = 0; i < partdoc.length; i++) {
+      partdoc[i].assignedQSet = null;
+    }
+    partdoc = partdoc.sort((a, b) => parseInt(b.score) - parseInt(a.score));
+    res.render("leaderboard.ejs", { userlist: partdoc });
   });
 });
 
