@@ -75,7 +75,7 @@ app.get("/participate", participationCheck, (req, res) => {
         }
         if (typeof option !== "undefined") {
           doc.level = doc.level + 1;
-          doc.elapsedTime = doc.elapsedTime + time;
+          doc.elapsedTime = parseInt(doc.elapsedTime) + parseInt(time);
         }
       }
       doc.save();
