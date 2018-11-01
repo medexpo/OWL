@@ -71,7 +71,7 @@ passport.use(
       clientSecret: process.env.SECRET
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
+      // console.log(profile);
 
       User.findOne({ googleId: profile.id }).then(currentUser => {
         if (currentUser) {
