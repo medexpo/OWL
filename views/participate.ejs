@@ -26,18 +26,6 @@
 
   <!-- Easy timer.js-->
   <script src="/public/js/easytimer.min.js"></script>
-  <script type="text/javascript">
-    var timer = new Timer();
-    timer.start({
-      precision: 'seconds'
-    });
-    timer.addEventListener('secondsUpdated', function (e) {
-      $('#time').val(timer.getTotalTimeValues().seconds);
-    });
-    var serverTime = Number($("#display-time").val);
-    var realTime = $("#time").val(timer.getTotalTimeValues().seconds);
-    $("#display-time").val(serverTime+realTime);
-  </script>
 </head>
 
 <body>
@@ -61,10 +49,10 @@
           </a>
         </div>
         <div class="time-taken">
-          <h4 style="color: green">Time-taken:
-            <span id="display-time" style="color: white">
-              <%= user.elapsedTime %>&nbsp;sec
+          <h4 style="color: green">Time remaining:
+            <span id="display-time" style="color: white;">
             </span>
+            <span>sec</span>
           </h4>
         </div>
         <div class="info d-flex flex-row flex-sm-row flex-md-row flex-lg-row flex-xl-row">
@@ -112,7 +100,7 @@
                 <input type="hidden" name="l" value="<%= user.level %>" />
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="hidden" id="time" name="t" value="0">
+                <input class="form-check-input" type="hidden" id="elapsed-time" name="t" value="0">
               </div>
               <br />
               <button type="submit" class="btn btn-outline-success">Submit</button>
@@ -122,6 +110,26 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript"> 
+    var dpTime = 200 - <%= user.elapsedTime %>;
+    if (localStorage.getItem('remainingTime') === null) {
+      localStorage.setItem('remainingTime', dpTime);
+      localStorage.setItem('elapsedTime', 0);
+    }
+
+    setInterval(function () {
+      var remTime = parseInt(localStorage.getItem('remainingTime'));
+      var realTime = parseInt(localStorage.getItem('elapsedTime'));
+      console.log(realTime);
+      localStorage.setItem('remainingTime', remTime - 1);
+      localStorage.setItem('elapsedTime', realTime + 1);
+      $("#display-time").html(remTime - 1);
+      $("#elapsed-time").val(realTime + 1);
+      if (localStorage.getItem("remainingTime") <= 0) {
+        window.location.href = "/timeout";
+      }
+    }, 1000);
+  </script>
 </body>
 
 </html>
