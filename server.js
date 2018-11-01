@@ -90,7 +90,7 @@ app.get("/participate", participationCheck, (req, res) => {
       // );
       // console.log(option == req.user.assignedQSet[req.user.level].correctIndex);
       if (option == req.user.assignedQSet[req.user.level].correctIndex) {
-        console.log("score updated");
+        // console.log("score updated");
         doc.score =
           req.user.score + req.user.assignedQSet[req.user.level].score;
       }
