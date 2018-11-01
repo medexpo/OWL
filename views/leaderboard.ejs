@@ -35,9 +35,11 @@
           <a href="/profile">
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Profile</button>
           </a>
-          <a href="/participate">
-            <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Play</button>
-          </a>
+          <% if(user.level<=19) { %>
+            <a href="/participate">
+              <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Play</button>
+            </a>
+          <% } %>
           <a href="/leaderboard">
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Leaderboard</button>
           </a>
