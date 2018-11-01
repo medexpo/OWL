@@ -32,8 +32,8 @@
       </div>
       <div class="col offset-3">
         <div>
-          <a href="/rules">
-            <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Rules</button>
+          <a href="/profile">
+            <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Profile</button>
           </a>
           <a href="/participate">
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Play</button>
@@ -41,8 +41,8 @@
           <a href="/leaderboard">
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Leaderboard</button>
           </a>
-          <a href="/profile">
-            <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Profile</button>
+          <a href="/rules">
+            <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Rules</button>
           </a>
         </div>
         <div class="main d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
@@ -67,16 +67,22 @@
                     <% for(var i=0; i<userlist.length;i++) { %>
                     <tr>
                       <td>
-                        <p style="font-weight: bold; font-size: 1rem;"><%= i+1 %></p>
+                        <p style="font-weight: bold; font-size: 1rem;">
+                          <%= i+1 %>
+                        </p>
                       </td>
                       <td>
                         <img class="img-thumbnail rounded-circle" src="<%= userlist[i].dpurl %>" />
                       </td>
                       <td>
-                        <p style="font-weight: bold; font-size: 1rem;"><%= userlist[i].name %></p>
+                        <p style="font-weight: bold; font-size: 1rem;">
+                          <%= userlist[i].name %>
+                        </p>
                       </td>
                       <td>
-                        <p style="font-weight: bold; font-size: 1rem;"><%= userlist[i].score %></p>
+                        <p style="font-weight: bold; font-size: 1rem;">
+                          <%= userlist[i].score %>
+                        </p>
                       </td>
                     </tr>
                     <% } %>
