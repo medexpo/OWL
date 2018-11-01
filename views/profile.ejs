@@ -50,7 +50,9 @@
         <div class="main pos-profile d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
           <% if(user.level>=19) { %>
           <div class="alert alert-success">
-            <strong>Congratulations!</strong> You have completed O.W.L.
+            <strong>Congratulations!</strong> You have completed O.W.L. with a score
+            <strong>
+              <%= user.score %></strong>/69
           </div>
           <% } %>
           <div class="p-2">
