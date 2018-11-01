@@ -27,6 +27,14 @@
 </head>
 
 <body>
+  <div style="display: none">
+    <div id="email">
+      <%= user.email %>
+    </div>
+    <div id="usr-time">
+      <%= user.elapsedTime %>
+    </div>
+  </div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-2 px-1 bg-dark position-fixed sticky-sidebar">
@@ -109,23 +117,31 @@
     </div>
   </div>
   <script type="text/javascript">
-    var dpTime = 200 - <%= user.elapsedTime %>;
-    if (localStorage.getItem('remainingTime') === null) {
-      localStorage.setItem('remainingTime', dpTime);
-    }
-    if (localStorage.getItem('elapsedTime') === null) {
-      localStorage.setItem('elapsedTime', 0);
+    var dpTime = 200 - parseInt($("#usr-time").html());
+    var email = JSON.stringify($("#email").html());
+    var times = [{
+      remainingTime: dpTime,
+      elapsedTime: 0
+    }];
+    if (localStorage.getItem(email) === null) {
+      localStorage.setItem(
+        email, JSON.stringify(times)
+      );
     }
 
     setInterval(function () {
-      var remTime = parseInt(localStorage.getItem('remainingTime'));
-      var realTime = parseInt(localStorage.getItem('elapsedTime'));
-      localStorage.setItem('remainingTime', remTime - 1);
-      localStorage.setItem('elapsedTime', realTime + 1);
+      var remTime = JSON.parse(localStorage.getItem(email))[0].remainingTime;
+      var realTime = JSON.parse(localStorage.getItem(email))[0].elapsedTime;
+      var times = [{
+        remainingTime: remTime - 1,
+        elapsedTime: realTime + 1
+      }];
+      localStorage.setItem(email, JSON.stringify(times));
       $("#display-time").html(remTime - 1);
       $("#elapsed-time").val(realTime + 1);
-      if (localStorage.getItem("remainingTime") <= 0) {
-        window.location.href = "/timeout";
+      if (remTime-1 <= 0) {
+        window.location = "http://127.0.0.1:8080/timeout";
+        return false;
       }
     }, 1000);
   </script>
