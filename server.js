@@ -106,7 +106,14 @@ app.get("/participate", participationCheck, (req, res) => {
 });
 
 app.get("/leaderboard", (req, res) => {
-  res.render("leaderboard.ejs", { user: req.user });
+  User.find({ score: { $gt: 0 } }, function(err, doc) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(doc);
+    }
+    res.render("leaderboard.ejs", { user: doc });
+  });
 });
 
 const server = app.listen(8080, () => {
