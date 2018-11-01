@@ -58,3 +58,18 @@
 .pos {
   margin-top: 15%;
 }
+
+.info h3 {
+  color: #e76e66;
+  font-size: 2rem;
+  margin: 20px 10px 10px 20px;
+}
+
+.info span {
+  color: white;
+  font-size: 3rem;
+}
+
+input[type=radio] {
+  transform: scale(1.5);
+}

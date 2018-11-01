@@ -41,32 +41,49 @@
           <a href="/leaderboard">
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Leaderboard</button>
           </a>
+          <a href="/profile">
+            <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Profile</button>
+          </a>
+        </div>
+        <div class="info d-flex flex-row flex-sm-row flex-md-row flex-lg-row flex-xl-row">
+          <h3>Level: <span class="level">
+              <%= user.level %> </span></h3>
+          <h3>Score: <span class="score">
+              <%= user.score %> </span></h3>
         </div>
         <div class="main pos d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
           <div class="p-2">
-            <p>
+            <h2>
               <%= user.assignedQSet[user.level].question %>
-            </p>
+            </h2>
+            <br />
             <form action="/participate" action="GET">
-              <ul>
-                <li>
-                  <input type="radio" name="options" value="0">
-                  <%= user.assignedQSet[user.level].answers[0] %></input>
-                </li>
-                <li>
-                  <input type="radio" name="options" value="1">
-                  <%= user.assignedQSet[user.level].answers[1] %></input>
-                </li>
-                <li>
-                  <input type="radio" name="options" value="2">
-                  <%= user.assignedQSet[user.level].answers[2] %></input>
-                </li>
-                <li>
-                  <input type="radio" name="options" value="3">
-                  <%= user.assignedQSet[user.level].answers[3] %></input>
-                </li>
-              </ul>
-              <button type="submit">Submit</button>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="value0" name="options" value="0">
+                <label class="form-check-label" for="value0">
+                  <%= user.assignedQSet[user.level].answers[0] %>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="value1" name="options" value="1">
+                <label class="form-check-label" for="value1">
+                  <%= user.assignedQSet[user.level].answers[1] %>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="value2" name="options" value="2">
+                <label class="form-check-label" for="value2">
+                  <%= user.assignedQSet[user.level].answers[2] %>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" id="value3" name="options" value="3">
+                <label class="form-check-label" for="value3">
+                  <%= user.assignedQSet[user.level].answers[3] %>
+                </label>
+              </div>
+              <br />
+              <button type="submit" class="btn btn-outline-success">Submit</button>
             </form>
           </div>
         </div>
