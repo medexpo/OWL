@@ -1,41 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="/public/assets/favicon.ico" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="/public/css/app.css" />
+  <link rel="stylesheet" type="text/css" href="/public/css/index.css" />
+
+  <title>O.W.L | Pulse | Excel 2018</title>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 px-1 bg-dark position-fixed sticky-sidebar">
+      </div>
+      <div class="col offset-3">
+        <div>
+          <a href="/rules">
+            <button type="button" class="btn btn-outline-secondary" style="margin: 10px 10px 10px 10px;">Rules</button>
+          </a>
+          <a href="/participate">
+            <button type="button" class="btn btn-outline-secondary" style="margin: 10px 10px 10px 10px;">Play</button>
+          </a>
+          <a href="/leaderboard">
+            <button type="button" class="btn btn-outline-secondary" style="margin: 10px 10px 10px 10px;">Rules</button>
+          </a>
+        </div>
+        <div class="main pos d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
+          <div class="p-2">
+            <img class="dp" src="<%= (user.dpurl) %>">
+          </div>
+          <div class="p-2">
+            <h4>
+              <%= user.name %>
+            </h4>
+            <h5>
+              <%= user.email %>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <p>
-        <%= user.assignedQSet[user.level].question %>
-    </p>
-    <form action="/participate" action="GET">
-        <ul>
-            <li>
-                <input type="radio" name="options" value="0">
-                <%= user.assignedQSet[user.level].answers[0] %></input>
-            </li>
-            <li>
-                <input type="radio" name="options" value="1">
-                <%= user.assignedQSet[user.level].answers[1] %></input>
-            </li>
-            <li>
-                <input type="radio" name="options" value="2">
-                <%= user.assignedQSet[user.level].answers[2] %></input>
-            </li>
-            <li>
-                <input type="radio" name="options" value="3">
-                <%= user.assignedQSet[user.level].answers[3] %></input>
-            </li>
-        </ul>
-        <button type="submit">Submit</button>
-    </form>
+  <p>
+    <%= user.assignedQSet[user.level].question %>
+  </p>
+  <form action="/participate" action="GET">
+    <ul>
+      <li>
+        <input type="radio" name="options" value="0">
+        <%= user.assignedQSet[user.level].answers[0] %></input>
+      </li>
+      <li>
+        <input type="radio" name="options" value="1">
+        <%= user.assignedQSet[user.level].answers[1] %></input>
+      </li>
+      <li>
+        <input type="radio" name="options" value="2">
+        <%= user.assignedQSet[user.level].answers[2] %></input>
+      </li>
+      <li>
+        <input type="radio" name="options" value="3">
+        <%= user.assignedQSet[user.level].answers[3] %></input>
+      </li>
+    </ul>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 
 </html>
