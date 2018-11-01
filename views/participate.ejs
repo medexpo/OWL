@@ -34,6 +34,9 @@
     timer.addEventListener('secondsUpdated', function (e) {
       $('#time').val(timer.getTotalTimeValues().seconds);
     });
+    var serverTime = Number($("#display-time").val);
+    var realTime = $("#time").val(timer.getTotalTimeValues().seconds);
+    $("#display-time").val(serverTime+realTime);
   </script>
 </head>
 
@@ -59,8 +62,8 @@
         </div>
         <div class="time-taken">
           <h4 style="color: green">Time-taken:
-            <span style="color: white">
-              <%= user.elapsedTime %>
+            <span id="display-time" style="color: white">
+              <%= user.elapsedTime %>&nbsp;sec
             </span>
           </h4>
         </div>
