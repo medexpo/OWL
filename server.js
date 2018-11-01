@@ -78,7 +78,7 @@ app.get("/participate", participationCheck, (req, res) => {
       if (err) {
         console.log(err);
       }
-      if (option) {
+      if (typeof option !== "undefined") {
         if (option === doc.assignedQSet[req.user.level].correctIndex) {
           doc.score = doc.score + doc.assignedQSet[req.user.level].score;
         }
@@ -90,7 +90,7 @@ app.get("/participate", participationCheck, (req, res) => {
   }
 });
 
-const server = app.listen(8080, () => {
+const server = app.listen(5001, () => {
   const host = server.address().address;
   const port = server.address().port;
 

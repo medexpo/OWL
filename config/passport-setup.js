@@ -71,12 +71,12 @@ passport.use(
       clientSecret: process.env.SECRET
     },
     (accessToken, refreshToken, profile, done) => {
-      // console.log(profile);
+      console.log(profile);
 
       User.findOne({ googleId: profile.id }).then(currentUser => {
         if (currentUser) {
           // already have this user
-          // console.log("user is: ", currentUser);
+          console.log("user is: ", currentUser);
           done(null, currentUser);
           // do something
         } else {
@@ -126,7 +126,7 @@ passport.use(
           })
             .save()
             .then(newUser => {
-              // console.log("created new user: ", newUser);
+              console.log("created new user: ", newUser);
               // do something
               done(null, newUser);
             });
