@@ -108,12 +108,16 @@
   font-size: 3rem;
 }
 
+label {
+  padding-left: 10px;
+}
+
 input[type=radio] {
   transform: scale(1.5);
 }
 
 .form-check {
-  margin: 10px 10px 10px 10px;
+  margin: 15px 15px 15px 15px;
 }
 
 .container-fluid {
