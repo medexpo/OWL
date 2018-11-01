@@ -44,45 +44,35 @@
         </div>
         <div class="main pos d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
           <div class="p-2">
-            <img class="dp" src="<%= (user.dpurl) %>">
-          </div>
-          <div class="p-2">
-            <h4>
-              <%= user.name %>
-            </h4>
-            <h5>
-              <%= user.email %>
-            </h5>
+            <p>
+              <%= user.assignedQSet[user.level].question %>
+            </p>
+            <form action="/participate" action="GET">
+              <ul>
+                <li>
+                  <input type="radio" name="options" value="0">
+                  <%= user.assignedQSet[user.level].answers[0] %></input>
+                </li>
+                <li>
+                  <input type="radio" name="options" value="1">
+                  <%= user.assignedQSet[user.level].answers[1] %></input>
+                </li>
+                <li>
+                  <input type="radio" name="options" value="2">
+                  <%= user.assignedQSet[user.level].answers[2] %></input>
+                </li>
+                <li>
+                  <input type="radio" name="options" value="3">
+                  <%= user.assignedQSet[user.level].answers[3] %></input>
+                </li>
+              </ul>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <p>
-    <%= user.assignedQSet[user.level].question %>
-  </p>
-  <form action="/participate" action="GET">
-    <ul>
-      <li>
-        <input type="radio" name="options" value="0">
-        <%= user.assignedQSet[user.level].answers[0] %></input>
-      </li>
-      <li>
-        <input type="radio" name="options" value="1">
-        <%= user.assignedQSet[user.level].answers[1] %></input>
-      </li>
-      <li>
-        <input type="radio" name="options" value="2">
-        <%= user.assignedQSet[user.level].answers[2] %></input>
-      </li>
-      <li>
-        <input type="radio" name="options" value="3">
-        <%= user.assignedQSet[user.level].answers[3] %></input>
-      </li>
-    </ul>
-    <button type="submit">Submit</button>
-  </form>
 </body>
 
 </html>
