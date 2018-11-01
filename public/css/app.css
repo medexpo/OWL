@@ -18,10 +18,36 @@
 .shadow-typo {
   position: relative;
   display: inline-block;
+  margin-top: 2%;
   font-size: 4rem;
   text-transform: uppercase;
   color: #00b3b4;
   text-shadow: 3px 3px 0 #235323, 8px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.threedee-typo {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #e76e66;
+  -webkit-transform: skew(-5deg, -5deg) rotate(5deg);
+  -moz-transform: skew(-5deg, -5deg) rotate(5deg);
+  -o-transform: skew(-5deg, -5deg) rotate(5deg); 
+  transform: skew(-5deg, -5deg) rotate(5deg);
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+  text-shadow: 1px 1px #d10e31,
+               1.2px 1.2px #d10e31,
+               1.3px 1.3px #d10e31,
+               1.4px 1.4px #d10e31,
+               1.5px 1.5px #d10e31,
+               1.6px 1.6px #d10e31,
+               1.7px 1.7px #d10e31,
+               1.8px 1.8px #890920,
+               1.9px 1.9px #890920,
+               2px 2px #890920,
+               2.1px 2.1px 2.5px rgba(0, 0, 0, 0.5);
 }
 
 .pulse-ecg {
