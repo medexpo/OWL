@@ -90,7 +90,7 @@ app.get("/participate", participationCheck, (req, res) => {
   }
 });
 
-const server = app.listen(5001, () => {
+const server = app.listen(8080, () => {
   const host = server.address().address;
   const port = server.address().port;
 
