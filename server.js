@@ -89,7 +89,7 @@ app.get("/participate", participationCheck, (req, res) => {
         doc.assignedQSet[doc.level].correctIndex
       );
       // console.log(option == req.user.assignedQSet[req.user.level].correctIndex);
-      if (option == req.user.assignedQSet[req.user.level].correctIndex) {
+      if (option === req.user.assignedQSet[req.user.level].correctIndex) {
         console.log("score updated");
         doc.score =
           req.user.score + req.user.assignedQSet[req.user.level].score;
@@ -106,14 +106,19 @@ app.get("/participate", participationCheck, (req, res) => {
 });
 
 app.get("/leaderboard", (req, res) => {
-  User.find({ score: { $gt: 0 } }, function(err, doc) {
+  User.find({ score: { $gt: -1 } }, function(err, doc) {
     if (err) {
       console.log(err);
     } else {
       console.log(doc);
     }
-    res.render("leaderboard.ejs", { user: doc });
+    doc = doc.sort((a, b) => parseInt(b.score) - parseInt(a.score));
+    res.render("leaderboard.ejs", { userlist: doc });
   });
+});
+
+app.get("/rules", (req, res) => {
+  res.render("rules.ejs");
 });
 
 const server = app.listen(8080, () => {

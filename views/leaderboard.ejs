@@ -11,7 +11,18 @@
 </head>
 
 <body>
-
+    <ul>
+        <% for(var i=0; i<userlist.length;i++) { %>
+        <li>
+            <img src="<%= userlist[i].dpurl %>" />
+            <h2>
+                <%= userlist[i].name %>
+            </h2>
+            <%= userlist[i].score %>
+            </h2>
+        </li>
+        <% } %>
+    </ul>
 </body>
 
 </html>
