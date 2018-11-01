@@ -68,23 +68,38 @@ app.get("/participate", participationCheck, (req, res) => {
   if (req.user.level === 20) {
     res.redirect("/profile");
   } else {
-    console.log(
-      option,
-      req.user.level,
-      req.user.score,
-      req.user.assignedQSet[req.user.level].correctIndex
-    );
+    // console.log(
+    //   "option in Request: ",
+    //   option,
+    //   "Level in request: ",
+    //   req.user.level,
+    //   "Score in request: ",
+    //   req.user.score,
+    //   "correct index for current question: ",
+    //   req.user.assignedQSet[req.user.level].correctIndex
+    // );
     User.findOne({ email: req.user.email }, function(err, doc) {
       if (err) {
         console.log(err);
       }
+      console.log(
+        "Doc: ",
+        doc.level,
+        doc.score,
+        doc.assignedQSet[doc.level].correctIndex
+      );
+      // console.log(option == req.user.assignedQSet[req.user.level].correctIndex);
+      if (option == req.user.assignedQSet[req.user.level].correctIndex) {
+        console.log("score updated");
+        doc.score =
+          req.user.score + req.user.assignedQSet[req.user.level].score;
+      }
       if (typeof option !== "undefined") {
-        if (option === doc.assignedQSet[req.user.level].correctIndex) {
-          doc.score = doc.score + doc.assignedQSet[req.user.level].score;
-        }
         doc.level = doc.level + 1;
       }
+
       doc.save();
+      console.log("");
     });
     res.render("participate.ejs", { user: req.user });
   }

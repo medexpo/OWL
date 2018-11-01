@@ -47,22 +47,22 @@
             <p>
               <%= user.assignedQSet[user.level].question %>
             </p>
-            <form action="/participate" action="GET">
+            <form action="/participate" method="GET">
               <ul>
                 <li>
-                  <input type="radio" name="options" value="0">
+                  <input type="radio" name="options" value="0" required>
                   <%= user.assignedQSet[user.level].answers[0] %></input>
                 </li>
                 <li>
-                  <input type="radio" name="options" value="1">
+                  <input type="radio" name="options" value="1" required>
                   <%= user.assignedQSet[user.level].answers[1] %></input>
                 </li>
                 <li>
-                  <input type="radio" name="options" value="2">
+                  <input type="radio" name="options" value="2" required>
                   <%= user.assignedQSet[user.level].answers[2] %></input>
                 </li>
                 <li>
-                  <input type="radio" name="options" value="3">
+                  <input type="radio" name="options" value="3" required>
                   <%= user.assignedQSet[user.level].answers[3] %></input>
                 </li>
               </ul>
