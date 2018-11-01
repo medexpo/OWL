@@ -1,9 +1,20 @@
-.sticky-sidebar {
+.sticky-sidebar-home {
   height: 100%;
   display: flex; 
   align-items: center; 
   justify-content: center;
   background-image: url("/public/assets/excel_logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sticky-sidebar {
+  height: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background-image: url("/public/assets/pulse_beat.gif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -65,12 +76,10 @@
 
 .p-2 h4 {
   color: #e76e66;
-  padding-left: 0.6rem;
   font-size: 2rem;
 }
 
 .p-2 h5 {
-  padding-left: 0.8rem;
   font-size: 1rem;
 }
 
