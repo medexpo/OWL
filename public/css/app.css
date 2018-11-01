@@ -1,9 +1,21 @@
-.sticky-sidebar {
+.sticky-sidebar-home {
   height: 100%;
   display: flex; 
   align-items: center; 
   justify-content: center;
   background-image: url("/public/assets/excel_logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sticky-sidebar {
+  background-color: #33383e !important;
+  height: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background-image: url("/public/assets/pulse_beat.gif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -63,19 +75,26 @@
   border-radius: 50%;
 }
 
+.list-group li {
+  font-size: 1.1rem;
+  margin: 10px 10px 10px 10px;
+}
+
 .p-2 h4 {
   color: #e76e66;
-  padding-left: 0.6rem;
   font-size: 2rem;
 }
 
 .p-2 h5 {
-  padding-left: 0.8rem;
   font-size: 1rem;
 }
 
-.pos {
+.pos-profile {
   margin-top: 15%;
+}
+
+.pos {
+  margin-top: 5%;
 }
 
 .info h3 {
@@ -91,4 +110,14 @@
 
 input[type=radio] {
   transform: scale(1.5);
+}
+
+.form-check {
+  margin: 5px 5px 5px 5px;
+}
+
+.container-fluid {
+  position: relative;
+  top: 2%;
+  left: 0;
 }
