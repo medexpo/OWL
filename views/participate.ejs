@@ -24,8 +24,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-  <!-- Easy timer.js-->
-  <script src="/public/js/easytimer.min.js"></script>
 </head>
 
 <body>
@@ -114,13 +112,14 @@
     var dpTime = 200 - <%= user.elapsedTime %>;
     if (localStorage.getItem('remainingTime') === null) {
       localStorage.setItem('remainingTime', dpTime);
+    }
+    if (localStorage.getItem('elapsedTime') === null) {
       localStorage.setItem('elapsedTime', 0);
     }
 
     setInterval(function () {
       var remTime = parseInt(localStorage.getItem('remainingTime'));
       var realTime = parseInt(localStorage.getItem('elapsedTime'));
-      console.log(realTime);
       localStorage.setItem('remainingTime', remTime - 1);
       localStorage.setItem('elapsedTime', realTime + 1);
       $("#display-time").html(remTime - 1);
