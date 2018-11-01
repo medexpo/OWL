@@ -28,7 +28,9 @@
   <script src="/public/js/easytimer.min.js"></script>
   <script type="text/javascript">
     var timer = new Timer();
-    timer.start({ precision: 'seconds' });
+    timer.start({
+      precision: 'seconds'
+    });
     timer.addEventListener('secondsUpdated', function (e) {
       $('#time').val(timer.getTotalTimeValues().seconds);
     });
@@ -55,20 +57,22 @@
             <button type="button" class="btn btn-outline-secondary" style="margin: 5px 5px 5px 5px;">Rules</button>
           </a>
         </div>
+        <div class="time-taken">
+          <h4 style="color: green">Time-taken:
+            <span style="color: white">
+              <%= user.elapsedTime %>
+            </span>
+          </h4>
+        </div>
         <div class="info d-flex flex-row flex-sm-row flex-md-row flex-lg-row flex-xl-row">
-          <h3>Question:
+          <h3 class="p-2">Question:
             <span>
               <%= user.level+1 %>
             </span>
           </h3>
-          <h3>Score:
+          <h3 class="p-2">Score:
             <span>
               <%= user.score %>
-            </span>
-          </h3>
-          <h3>Time taken:
-            <span>
-              <%= user.time %>
             </span>
           </h3>
         </div>

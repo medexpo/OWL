@@ -94,10 +94,10 @@
 }
 
 .pos {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
-.info h3 {
+.info h3{
   color: #e76e66;
   font-size: 2rem;
   margin: 20px 10px 10px 20px;
@@ -124,4 +124,8 @@ input[type=radio] {
   position: relative;
   top: 2%;
   left: 0;
+}
+
+.time-taken {
+  margin-top: 3%; 
 }
