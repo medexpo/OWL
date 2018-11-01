@@ -64,7 +64,8 @@ app.get("/", userCheck, (req, res) => {
 });
 
 app.get("/participate", participationCheck, (req, res) => {
-  var option = req.param("options");
+  var option = req.param("o");
+  var level = req.param("l");
   if (req.user.level >= 19) {
     res.redirect("/profile");
   } else {
@@ -89,17 +90,17 @@ app.get("/participate", participationCheck, (req, res) => {
       //   doc.assignedQSet[doc.level].correctIndex
       // );
       // console.log(option == req.user.assignedQSet[req.user.level].correctIndex);
-      if (option == req.user.assignedQSet[req.user.level].correctIndex) {
-        // console.log("score updated");
-        doc.score =
-          req.user.score + req.user.assignedQSet[req.user.level].score;
+      if (level == req.user.level) {
+        if (option == req.user.assignedQSet[req.user.level].correctIndex) {
+          // console.log("score updated");
+          doc.score =
+            req.user.score + req.user.assignedQSet[req.user.level].score;
+        }
+        if (typeof option !== "undefined") {
+          doc.level = doc.level + 1;
+        }
       }
-      if (typeof option !== "undefined") {
-        doc.level = doc.level + 1;
-      }
-
       doc.save();
-      console.log("");
 
       res.render("participate.ejs", { user: doc });
     });
