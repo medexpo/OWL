@@ -6,12 +6,15 @@ const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const User = require("./models/user-model");
+const bodyParser = require("body-parser");
 
 const app = express();
 
 // Setup static files and views directory
 app.set("view engine", "ejs");
 app.use("/public", express.static("public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   cookieSession({
@@ -107,7 +110,8 @@ app.get("/rules", (req, res) => {
   res.render("rules.ejs");
 });
 
-app.get("/timeout", (req, res) => {
+app.post("/timeout", (req, res) => {
+  console.log(req.body);
   var time = req.param("t");
   User.findOne({ email: req.user.email }, function(err, userdoc) {
     if (err) {
