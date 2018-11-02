@@ -119,7 +119,7 @@ app.post("/timeout", (req, res) => {
     userdoc.level = 20;
     userdoc.elapsedTime = 200;
     userdoc.save();
-    res.redirect("/profile", { user: userdoc });
+    res.render("profile.ejs", { user: userdoc });
   });
 });
 
