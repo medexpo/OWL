@@ -140,8 +140,9 @@
       $("#display-time").html(remTime - 1);
       $("#elapsed-time").val(realTime + 1);
       if (remTime-1 <= 0) {
-        window.location = "http://127.0.0.1:8080/timeout";
-        return false;
+        $.post("/timeout", {
+          userEmail: email
+        });
       }
     }, 1000);
   </script>
