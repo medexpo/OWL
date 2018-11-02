@@ -142,7 +142,7 @@
       localStorage.setItem(email, JSON.stringify(times));
       $("#display-time").html(remTime - 1);
       $("#elapsed-time").val(realTime + 1);
-      if (remTime-1 <= 0) {
+      if (remTime - 1 <= 0) {
         $("#bugthefix").submit();
       }
     }, 1000);

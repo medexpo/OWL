@@ -112,16 +112,15 @@ app.get("/rules", (req, res) => {
 
 app.post("/timeout", (req, res) => {
   console.log(req.body);
-  var time = req.param("t");
-  User.findOne({ email: req.user.email }, function(err, userdoc) {
+  User.findOne({ email: req.body.i }, function(err, userdoc) {
     if (err) {
       console.log(err);
     }
     userdoc.level = 20;
-    userdoc.elapsedTime = parseInt(time);
+    userdoc.elapsedTime = 200;
     userdoc.save();
+    res.redirect("/profile", { user: userdoc });
   });
-  res.redirect("/profile", { user: req.user });
 });
 
 const server = app.listen(8080, () => {
